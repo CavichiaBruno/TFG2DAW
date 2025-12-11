@@ -1,0 +1,25 @@
+.nav {
+  background-color: #fff;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  margin-left: 80px;
+}
+
+.navList {
+  display: flex;
+  gap: 5rem;
+  list-style: none;
+  margin: 0 auto;
+}
+
+.navRight {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding-right: 40px;
+}
+
+h3 {
+  font-size: 30px;
+}
