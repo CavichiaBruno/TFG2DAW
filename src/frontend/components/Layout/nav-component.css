@@ -1,9 +1,8 @@
 .nav {
   background-color: #fff;
-  padding: 0.5rem;
   display: flex;
   align-items: center;
-  margin-left: 80px;
+  margin-left: 5rem;
 }
 
 .navList {
@@ -17,9 +16,9 @@
   display: flex;
   gap: 2rem;
   list-style: none;
-  padding-right: 40px;
+  padding-right: 2.5rem;
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 1.875rem;
 }
