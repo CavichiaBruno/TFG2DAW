@@ -1,24 +1,101 @@
 .nav {
-  background-color: #fff;
   display: flex;
   align-items: center;
-  margin-left: 5rem;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.nav-logo img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.nav-logo h3 {
+  margin: 0;
+  color: #1a1a1a;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .navList {
   display: flex;
-  gap: 5rem;
   list-style: none;
-  margin: 0 auto;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  justify-content: center;
+}
+
+.navList li a {
+  text-decoration: none;
+  color: #4a5568;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.navList li a::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #2563eb 0%, #1d4ed8 100%);
+  transition: width 0.3s ease;
+}
+
+.navList li a:hover {
+  color: #2563eb;
+}
+
+.navList li a:hover::after {
+  width: 100%;
 }
 
 .navRight {
   display: flex;
-  gap: 2rem;
-  list-style: none;
-  padding-right: 2.5rem;
+  align-items: center;
+  gap: 1rem;
 }
 
-h3 {
-  font-size: 1.875rem;
+.navRight a {
+  text-decoration: none;
+}
+
+.btn-login {
+  padding: 0.65rem 1.75rem;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+}
+
+.btn-login:hover {
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
 }

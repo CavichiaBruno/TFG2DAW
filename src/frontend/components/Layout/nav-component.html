@@ -6,25 +6,30 @@
     <title>Nav</title>
     <link rel="stylesheet" href="nav-component.css" />
     <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <nav class="nav">
-      <img src="src/img/IBERPISO_LOGO.jpg" />
-      <h3>IberPiso</h3>
+      <div class="nav-logo">
+        <img src="../../../img/IBERPISO_LOGO.jpg" alt="IberPiso Logo" />
+        <h3>IberPiso</h3>
+      </div>
+      
       <ul class="navList">
-        <li><a href="#"></a>Comprar</li>
-        <li><a href="#"></a>Alquilar</li>
-        <li><a href="#"></a>Vender</li>
-        <li><a href="#"></a>Promociones</li>
+        <li><a href="#">Comprar</a></li>
+        <li><a href="#">Alquilar</a></li>
+        <li><a href="#">Vender</a></li>
+        <li><a href="#">Promociones</a></li>
       </ul>
 
-      <ul class="navRight">
-        <span class="material-icons">account_circle</span>
-        <button type="button">Iniciar Sesion</button>
-      </ul>
+      <div class="navRight">
+        <a href="../login-page/login-page-component.html">
+          <button type="button" class="btn-login">Iniciar Sesión</button>
+        </a>
+      </div>
     </nav>
   </body>
 </html>
+
