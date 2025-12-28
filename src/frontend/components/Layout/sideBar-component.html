@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="sideBar-component.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <h3 class="sidebar-title">Filtros de búsqueda</h3>
+
+      <div class="filter-section">
+        <label class="filter-label">Tipo de operación</label>
+        <div class="filter-options">
+          <label class="filter-option">
+            <input type="radio" name="operation" value="buy" />
+            <span>Comprar</span>
+          </label>
+          <label class="filter-option">
+            <input type="radio" name="operation" value="rent" />
+            <span>Alquilar</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <label class="filter-label">Precio máximo</label>
+        <input
+          type="range"
+          class="filter-range"
+          min="0"
+          max="1000000"
+          value="500000"
+        />
+        <div class="filter-value">€500,000</div>
+      </div>
+
+      <div class="filter-section">
+        <label class="filter-label">Ubicación</label>
+        <input
+          type="text"
+          class="filter-input"
+          placeholder="Ciudad o zona"
+        />
+      </div>
+
+      <div class="filter-section">
+        <label class="filter-label">Habitaciones</label>
+        <select class="filter-select">
+          <option value="">Cualquiera</option>
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+          <option value="4">4+</option>
+        </select>
+      </div>
+
+      <div class="filter-section">
+        <label class="filter-label">Baños</label>
+        <select class="filter-select">
+          <option value="">Cualquiera</option>
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+        </select>
+      </div>
+
+      <div class="filter-section">
+        <label class="filter-label">Superficie mínima (m²)</label>
+        <input
+          type="number"
+          class="filter-input"
+          placeholder="Ej: 60"
+          min="0"
+        />
+      </div>
+
+      <button type="button" class="filter-button">Aplicar filtros</button>
+      <button type="button" class="filter-button filter-button-secondary">
+        Limpiar
+      </button>
+    </aside>
+  </body>
+</html>
+
