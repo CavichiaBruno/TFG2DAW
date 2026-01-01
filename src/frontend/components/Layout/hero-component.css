@@ -1,95 +1,120 @@
+/* Hero Component Styles */
 .hero {
-  background: linear-gradient(135deg, #e8f0fe 0%, #f8fafc 100%);
-  padding: 5rem 2rem;
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
+    position: relative;
+    padding: 8rem 0;
+    text-align: center;
+    color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80') center/cover no-repeat fixed;
+    margin-bottom: 0;
 }
 
 .hero-content {
-  max-width: 800px;
-  margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
-.hero-title {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 0 0 1.5rem 0;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: white;
+    text-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
 }
 
-.hero-subtitle {
-  font-size: 1.25rem;
-  color: #4a5568;
-  margin: 0 0 2.5rem 0;
-  font-weight: 400;
-  line-height: 1.6;
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    color: #f1f5f9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
 }
 
-.btn-primary,
-.btn-secondary {
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  display: inline-block;
-  font-family: 'Montserrat', sans-serif;
+.hero-buttons .btn-primary {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    background: #2563eb;
+    border: none;
 }
 
-.btn-primary {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  color: white;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+.hero-buttons .btn-secondary {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    background: white;
+    color: #0f172a;
+    border: none;
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+.hero-buttons .btn-secondary:hover {
+    background: #f1f5f9;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
 }
 
-.btn-secondary {
-  background: white;
-  color: #2563eb;
-  border: 2px solid #2563eb;
+/* Features Band */
+.features-band {
+    background: white;
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: -4rem auto 4rem;
+    position: relative;
+    z-index: 10;
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-.btn-secondary:hover {
-  background: #2563eb;
-  color: white;
+.feature-item {
+    text-align: center;
+}
+
+.feature-icon {
+    background: #eff6ff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #2563eb;
+    margin: 0 auto 1.5rem;
+}
+
+.feature-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+}
+
+.feature-item p {
+    color: #64748b;
+    line-height: 1.6;
 }
 
 @media (max-width: 768px) {
-  .hero {
-    padding: 3rem 1.5rem;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    width: 100%;
-    text-align: center;
-  }
+    .hero { padding: 6rem 0; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero-buttons { flex-direction: column; }
+    .features-band { 
+        margin: 2rem auto; 
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem;
+    }
 }
-

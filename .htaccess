@@ -1,0 +1,38 @@
+# Apache Configuration for IberPiso
+# Enable mod_rewrite
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /TFG2DAW/
+    
+    # Redirect all requests to backend index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ src/backend/index.php [QSA,L]
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# PHP Settings
+<IfModule mod_php.c>
+    php_value upload_max_filesize 10M
+    php_value post_max_size 10M
+    php_value max_execution_time 300
+    php_value max_input_time 300
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes +FollowSymLinks
+
+# Allow access
+Require all granted
+
+# Protect sensitive files
+<FilesMatch "\.(env|sql|md|git)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

@@ -1,212 +1,155 @@
+/* Register Page Styles - Minimalist Redesign */
 .layout {
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #4261c7 0%, #3b82f6 50%, #60a5fa 100%);
-  padding: 2rem;
-  position: relative;
-  overflow: hidden;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Subtle background elements */
 .layout::before {
-  content: '';
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 50%;
-  top: -150px;
-  right: -150px;
-  animation: float 20s ease-in-out infinite;
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f0f9ff 100%);
+    border-radius: 50%;
+    top: -200px;
+    right: -200px;
+    z-index: 0;
 }
 
 .layout::after {
-  content: '';
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  bottom: -100px;
-  left: -100px;
-  animation: float 15s ease-in-out infinite reverse;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-30px) rotate(5deg);
-  }
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+    border-radius: 50%;
+    bottom: -150px;
+    left: -150px;
+    z-index: 0;
 }
 
 .layout section {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 28rem;
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 3rem 2.5rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 650px; /* Increased width significantly */
+    background: #ffffff;
+    border-radius: 1.5rem;
+    padding: 3.5rem 4rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.05); /* Softer shadow */
+    border: 1px solid #f1f5f9;
 }
 
 .back-button {
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #6b7280;
-  text-decoration: none;
-  background: #f9fafb;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-  border: 1px solid #e5e7eb;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #64748b;
+    text-decoration: none;
+    background: transparent;
+    border-radius: 8px;
+    transition: all 0.2s ease;
 }
 
 .back-button:hover {
-  color: #2563eb;
-  background: #eff6ff;
-  border-color: #bfdbfe;
-  transform: translateX(-2px);
+    color: #0f172a;
+    background: #f1f5f9;
 }
 
-.back-button::before {
-  content: '←';
-  font-size: 1.2rem;
-}
 .register {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    text-align: center;
 }
 
 .logo {
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  margin-bottom: 1rem;
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 0.5rem;
 }
 
-.logo-iber {
-  color: #000000;
-}
-
-.logo-piso {
-  background: linear-gradient(90deg, #4fc3f7 0%, #2196f3 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+.logo-iber { color: #0f172a; }
+.logo-piso { color: #2563eb; }
 
 .login-subtitle {
-  font-size: 0.95rem;
-  color: #6b7280;
-  font-weight: 400;
+    font-size: 1.1rem;
+    color: #64748b;
+    font-weight: 400;
+    margin-top: -1.5rem;
+    margin-bottom: 1rem;
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-  width: 100%;
-  text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    text-align: left;
 }
 
 .register label {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #374151;
-  letter-spacing: 0.01em;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #334151;
 }
 
 .register input {
-  padding: 0.875rem 1rem;
-  font-size: 1rem;
-  border: 1.5px solid #e5e7eb;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-  background: #ffffff;
-  color: #1a1a1a;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    transition: all 0.2s ease;
+    background: #f8fafc;
+    color: #1e293b;
+    width: 100%;
 }
 
 .register input:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-}
-
-.register input::placeholder {
-  color: #9ca3af;
+    outline: none;
+    border-color: #2563eb;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
 }
 
 .register button {
-  padding: 1rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
-  margin-top: 0.5rem;
-  width: 100%;
+    padding: 1.1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background: #0f172a;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 1rem;
+    width: 100%;
 }
 
 .register button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-}
-
-.register button:active {
-  transform: translateY(0);
+    transform: translateY(-1px);
+    background: #1e293b;
+    box-shadow: 0 10px 20px -5px rgba(15, 23, 42, 0.15);
 }
 
 @media (max-width: 768px) {
-  .layout section {
-    padding: 2.5rem 2rem;
-  }
-
-  .logo {
-    font-size: 3rem;
-  }
-
-  .register h1 {
-    font-size: 1.5rem;
-  }
-
-  .register {
-    gap: 1.75rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .layout {
-    padding: 1rem;
-  }
-
-  .layout section {
-    padding: 2rem 1.5rem;
-  }
-
-  .logo {
-    font-size: 2.5rem;
-  }
-
-  .register h1 {
-    font-size: 1.4rem;
-  }
+    .layout section { padding: 2rem; max-width: 100%; border-radius: 0; box-shadow: none; }
+    .layout { padding: 0; background: white; }
+    .layout::before, .layout::after { display: none; }
 }

@@ -1,0 +1,19 @@
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /iberpiso/src/backend/
+    
+    # Permitir acceso a archivos estáticos
+    RewriteCond %{REQUEST_URI} ^/iberpiso/src/(frontend|public|img)/ [NC]
+    RewriteRule ^(.*)$ /$1 [L]
+    
+    # Redirigir todo lo demás a index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+# Permitir acceso
+Options +FollowSymLinks -Indexes
+Require all granted
