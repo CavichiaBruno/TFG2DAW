@@ -1,0 +1,11 @@
+.git
+.gitignore
+README.MD
+SETUP_APACHE.md
+docker-compose.yml
+Dockerfile
+fix-paths.ps1
+package-lock.json
+src/frontend/Dockerfile
+src/frontend/docker-compose.yml
+src/frontend/.dockerignore

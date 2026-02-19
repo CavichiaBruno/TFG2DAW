@@ -1,0 +1,57 @@
+services:
+  # Apache + PHP
+  web:
+    build: .
+    container_name: iberpiso-web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src/public/uploads:/var/www/html/src/public/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DB_HOST=db
+      - DB_NAME=iberpiso
+      - DB_USER=iberpiso_user
+      - DB_PASS=iberpiso_pass
+    restart: unless-stopped
+
+  # MySQL
+  db:
+    image: mysql:8.0
+    container_name: iberpiso-db
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: iberpiso
+      MYSQL_USER: iberpiso_user
+      MYSQL_PASSWORD: iberpiso_pass
+    volumes:
+      - iberpiso_db_data:/var/lib/mysql
+      - ./src/backend/database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  # phpMyAdmin (optional, for convenience)
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: iberpiso-phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: iberpiso_user
+      PMA_PASSWORD: iberpiso_pass
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  iberpiso_db_data:

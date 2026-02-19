@@ -2,9 +2,8 @@
 # Enable mod_rewrite
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /TFG2DAW/
     
-    # Redirect all requests to backend index.php
+    # Redirect all non-file/non-directory requests to backend router
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ src/backend/index.php [QSA,L]

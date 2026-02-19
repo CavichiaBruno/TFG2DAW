@@ -2,18 +2,21 @@
 /**
  * Database Configuration
  * PDO connection for MySQL/MariaDB
+ * Supports both Docker (env vars) and local XAMPP (defaults)
  */
 
-// Database credentials
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'iberpiso');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+// Database credentials - use env vars if available (Docker), otherwise defaults (XAMPP)
+define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
+define('DB_NAME', getenv('DB_NAME') ?: 'iberpiso');
+define('DB_USER', getenv('DB_USER') ?: 'root');
+define('DB_PASS', getenv('DB_PASS') ?: '');
 define('DB_CHARSET', 'utf8mb4');
 
 // Base URL for the application
-define('BASE_URL', '/TFG2DAW/src/backend');
-define('ASSETS_URL', '/TFG2DAW/src');
+// In Docker: app is at root (/), locally: at /TFG2DAW/
+$isDocker = getenv('DB_HOST') !== false;
+define('BASE_URL', $isDocker ? '/src/backend' : '/TFG2DAW/src/backend');
+define('ASSETS_URL', $isDocker ? '/src' : '/TFG2DAW/src');
 
 // PDO options for security and error handling
 $pdoOptions = [
