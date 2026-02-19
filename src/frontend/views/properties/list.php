@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Properties List View
  * Display all properties with filters
@@ -10,10 +10,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Propiedades - IberPiso</title>
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/globals.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/nav-component.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/main-component.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/footer-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/globals.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/nav-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/main-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/footer-component.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -37,7 +37,7 @@
             <!-- Filters -->
             <div class="filters-section">
                 <h2>Buscar Propiedades</h2>
-                <form method="GET" action="/TFG2DAW/src/backend/">
+                <form method="GET" action="<?php echo BASE_URL; ?>/">
                     <input type="hidden" name="action" value="properties">
                     
                     <div class="filter-grid">
@@ -134,7 +134,7 @@
                                         <span>📐 <?php echo $property['superficie']; ?> m²</span>
                                     <?php endif; ?>
                                 </div>
-                                <a href="/TFG2DAW/src/backend/?action=property_detail&id=<?php echo $property['id']; ?>" class="property-link">
+                                <a href="<?php echo BASE_URL; ?>/?action=property_detail&id=<?php echo $property['id']; ?>" class="property-link">
                                     Ver detalles →
                                 </a>
                             </div>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Create Blog Post View
  */
@@ -9,10 +9,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuevo Artículo - IberPiso</title>
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/globals.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/nav-component.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/main-component.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/footer-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/globals.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/nav-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/main-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/footer-component.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -30,7 +30,7 @@
             </div>
         <?php endif; ?>
         
-        <form method="POST" action="/TFG2DAW/src/backend/?action=blog_store" enctype="multipart/form-data">
+        <form method="POST" action="<?php echo BASE_URL; ?>/?action=blog_store" enctype="multipart/form-data">
             <div class="form-group">
                 <label>Título *</label>
                 <input type="text" name="titulo" required placeholder="Título del artículo">

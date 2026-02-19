@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * User Profile View
  * Display user profile with properties and favorites
@@ -10,9 +10,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Perfil - IberPiso</title>
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/globals.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/nav-component.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/footer-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/globals.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/nav-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/footer-component.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .profile-container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div style="margin-top: 1.5rem;">
-                <a href="/TFG2DAW/src/backend/?action=profile_edit" class="btn-primary">Editar Perfil</a>
+                <a href="<?php echo BASE_URL; ?>/?action=profile_edit" class="btn-primary">Editar Perfil</a>
             </div>
         </div>
         
@@ -85,10 +85,10 @@
                                 <p><strong>Ubicación:</strong> <?php echo htmlspecialchars($property['ciudad']); ?></p>
                                 <p><strong>Estado:</strong> <?php echo $property['activa'] ? 'Activa' : 'Inactiva'; ?></p>
                                 <div style="margin-top: 1rem;">
-                                    <a href="/TFG2DAW/src/backend/?action=property_detail&id=<?php echo $property['id']; ?>">
+                                    <a href="<?php echo BASE_URL; ?>/?action=property_detail&id=<?php echo $property['id']; ?>">
                                         <button class="btn-primary">Ver</button>
                                     </a>
-                                    <a href="/TFG2DAW/src/backend/?action=property_edit&id=<?php echo $property['id']; ?>">
+                                    <a href="<?php echo BASE_URL; ?>/?action=property_edit&id=<?php echo $property['id']; ?>">
                                         <button class="btn-edit">Editar</button>
                                     </a>
                                 </div>
@@ -98,7 +98,7 @@
                 </div>
             <?php else: ?>
                 <p>No tienes propiedades publicadas.</p>
-                <a href="/TFG2DAW/src/backend/?action=property_create" class="btn-primary">Publicar Propiedad</a>
+                <a href="<?php echo BASE_URL; ?>/?action=property_create" class="btn-primary">Publicar Propiedad</a>
             <?php endif; ?>
         </div>
         
@@ -114,7 +114,7 @@
                                 <p><strong>Precio:</strong> <?php echo formatPrice($favorite['precio']); ?></p>
                                 <p><strong>Ubicación:</strong> <?php echo htmlspecialchars($favorite['ciudad']); ?></p>
                                 <div style="margin-top: 1rem;">
-                                    <a href="/TFG2DAW/src/backend/?action=property_detail&id=<?php echo $favorite['id']; ?>">
+                                    <a href="<?php echo BASE_URL; ?>/?action=property_detail&id=<?php echo $favorite['id']; ?>">
                                         <button class="btn-primary">Ver Detalle</button>
                                     </a>
                                 </div>

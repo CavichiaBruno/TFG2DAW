@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Admin User List View
  */
@@ -9,10 +9,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Usuarios - Admin IberPiso</title>
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/globals.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/nav-component.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/main-component.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/footer-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/globals.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/nav-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/main-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/footer-component.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .admin-table-container { max-width: 1200px; margin: 3rem auto; padding: 0 1rem; }
@@ -31,7 +31,7 @@
     <main class="admin-table-container">
         <div class="admin-header">
             <h1>Gestión de Usuarios</h1>
-            <a href="/TFG2DAW/src/backend/?action=admin_user_create" class="btn-primary">Crear Usuario</a>
+            <a href="<?php echo BASE_URL; ?>/?action=admin_user_create" class="btn-primary">Crear Usuario</a>
         </div>
         
         <?php if (hasFlash('success')): ?>
@@ -71,9 +71,9 @@
                             </td>
                             <td><?php echo date('d/m/Y', strtotime($user['created_at'])); ?></td>
                             <td class="action-buttons">
-                                <a href="/TFG2DAW/src/backend/?action=admin_user_edit&id=<?php echo $user['id']; ?>" class="btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Editar</a>
+                                <a href="<?php echo BASE_URL; ?>/?action=admin_user_edit&id=<?php echo $user['id']; ?>" class="btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Editar</a>
                                 <?php if ($user['id'] != $_SESSION['user_id']): ?>
-                                    <form method="POST" action="/TFG2DAW/src/backend/?action=admin_user_delete" onsubmit="return confirm('¿Seguro que quieres eliminar este usuario?');" style="display:inline;">
+                                    <form method="POST" action="<?php echo BASE_URL; ?>/?action=admin_user_delete" onsubmit="return confirm('¿Seguro que quieres eliminar este usuario?');" style="display:inline;">
                                         <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
                                         <button type="submit" class="btn-danger" style="padding: 0.25rem 0.5rem; font-size: 0.8rem; background: #ef4444; color: white; border: none; border-radius: 4px; cursor: pointer;">Eliminar</button>
                                     </form>

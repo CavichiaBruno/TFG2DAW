@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Property Detail View
  * Display single property with full details
@@ -10,11 +10,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($property['titulo']); ?> - IberPiso</title>
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/globals.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/nav-component.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/footer-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/globals.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/nav-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/footer-component.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/main-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/main-component.css">
 </head>
 <body>
     <?php include __DIR__ . '/../../components/Layout/nav-component.php'; ?>
@@ -74,8 +74,8 @@
                 <!-- Owner actions -->
                 <?php if (isAuthenticated() && ($_SESSION['user_id'] == $property['usuario_id'] || isAdmin())): ?>
                     <div class="admin-actions">
-                        <a href="/TFG2DAW/src/backend/?action=property_edit&id=<?php echo $property['id']; ?>" class="btn-primary">Editar</a>
-                        <form method="POST" action="/TFG2DAW/src/backend/?action=property_delete" style="display: inline;" 
+                        <a href="<?php echo BASE_URL; ?>/?action=property_edit&id=<?php echo $property['id']; ?>" class="btn-primary">Editar</a>
+                        <form method="POST" action="<?php echo BASE_URL; ?>/?action=property_delete" style="display: inline;" 
                               onsubmit="return confirm('¿Estás seguro de eliminar esta propiedad?');">
                             <input type="hidden" name="id" value="<?php echo $property['id']; ?>">
                             <button type="submit" class="btn-danger">Eliminar</button>
@@ -88,7 +88,7 @@
             <div>
                 <div class="contact-form">
                     <h3>Contactar</h3>
-                    <form method="POST" action="/TFG2DAW/src/backend/?action=message_send">
+                    <form method="POST" action="<?php echo BASE_URL; ?>/?action=message_send">
                         <input type="hidden" name="propiedad_id" value="<?php echo $property['id']; ?>">
                         
                         <input type="text" name="nombre" placeholder="Tu nombre" required 
@@ -134,7 +134,7 @@
     
     <script>
         function toggleFavorite(propertyId) {
-            fetch('/TFG2DAW/src/backend/?action=favorite_toggle', {
+            fetch('<?php echo BASE_URL; ?>/?action=favorite_toggle', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: 'propiedad_id=' + propertyId

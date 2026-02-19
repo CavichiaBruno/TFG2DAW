@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Register Page Component
  * Converted to PHP with backend integration
@@ -10,16 +10,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro - IberPiso</title>
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/globals.css" />
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/register-page/register-page-component.css" />
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/globals.css" />
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/register-page/register-page-component.css" />
     <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
 </head>
 <body>
     <main class="layout">
-        <a href="/TFG2DAW/src/backend/?action=login" class="back-button">Volver</a>
+        <a href="<?php echo BASE_URL; ?>/?action=login" class="back-button">Volver</a>
         
         <section>
-            <form class="register" method="POST" action="/TFG2DAW/src/backend/?action=register_post">
+            <form class="register" method="POST" action="<?php echo BASE_URL; ?>/?action=register_post">
                 <div class="logo">
                     <span class="logo-iber">IBER</span><span class="logo-piso">PISO</span>
                 </div>
@@ -80,7 +80,7 @@
 
                 <p class="login-link">
                     ¿Ya tienes cuenta?
-                    <a href="/TFG2DAW/src/backend/?action=login">Iniciar sesión</a>
+                    <a href="<?php echo BASE_URL; ?>/?action=login">Iniciar sesión</a>
                 </p>
             </form>
         </section>

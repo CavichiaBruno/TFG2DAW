@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Create Property Form
  * Form for adding a new property
@@ -10,11 +10,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Propiedad - IberPiso</title>
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/globals.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/nav-component.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/footer-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/globals.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/nav-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/footer-component.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/main-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/main-component.css">
 </head>
 <body>
     <?php include __DIR__ . '/../../components/Layout/nav-component.php'; ?>
@@ -32,7 +32,7 @@
             </div>
         <?php endif; ?>
         
-        <form method="POST" action="/TFG2DAW/src/backend/?action=property_store" enctype="multipart/form-data">
+        <form method="POST" action="<?php echo BASE_URL; ?>/?action=property_store" enctype="multipart/form-data">
             <div class="form-grid">
                 <div class="form-group full-width">
                     <label>Título *</label>

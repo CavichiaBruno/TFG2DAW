@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Login Page Component
  * Converted to PHP with backend integration
@@ -10,8 +10,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - IberPiso</title>
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/globals.css" />
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/login-page/login-page-component.css" />
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/globals.css" />
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/login-page/login-page-component.css" />
     <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
 </head>
 <body>
@@ -25,7 +25,7 @@
         </section>
 
         <section class="right">
-            <form class="login" method="POST" action="/TFG2DAW/src/backend/?action=login_post">
+            <form class="login" method="POST" action="<?php echo BASE_URL; ?>/?action=login_post">
                 <div class="logo">
                     <span class="logo-iber">IBER</span><span class="logo-piso">PISO</span>
                 </div>
@@ -70,7 +70,7 @@
 
                 <p class="signup-link">
                     ¿No tienes cuenta?
-                    <a href="/TFG2DAW/src/backend/?action=register">Regístrate</a>
+                    <a href="<?php echo BASE_URL; ?>/?action=register">Regístrate</a>
                 </p>
             </form>
         </section>

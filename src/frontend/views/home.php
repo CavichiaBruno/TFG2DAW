@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Home Page
  * Landing page with hero and featured properties
@@ -16,11 +16,11 @@ $featuredProperties = $propertyModel->getFeatured(6);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IberPiso - Tu Portal Inmobiliario de Confianza</title>
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/globals.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/nav-component.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/hero-component.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/main-component.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/footer-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/globals.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/nav-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/hero-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/main-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/footer-component.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -134,7 +134,7 @@ $featuredProperties = $propertyModel->getFeatured(6);
                                         <span>📐 <?php echo $property['superficie']; ?> m²</span>
                                     <?php endif; ?>
                                 </div>
-                                <a href="/TFG2DAW/src/backend/?action=property_detail&id=<?php echo $property['id']; ?>" class="property-link">
+                                <a href="<?php echo BASE_URL; ?>/?action=property_detail&id=<?php echo $property['id']; ?>" class="property-link">
                                     Ver detalles →
                                 </a>
                             </div>
@@ -146,7 +146,7 @@ $featuredProperties = $propertyModel->getFeatured(6);
             </div>
             
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="/TFG2DAW/src/backend/?action=properties" class="btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">Explorar Todo el Catálogo</a>
+                <a href="<?php echo BASE_URL; ?>/?action=properties" class="btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">Explorar Todo el Catálogo</a>
             </div>
         </div>
     </main>
@@ -157,8 +157,8 @@ $featuredProperties = $propertyModel->getFeatured(6);
             <h2 style="font-size: 2.5rem; font-weight: 800; color: #0f172a; margin-bottom: 1.5rem;">¿Listo para encontrar tu próximo hogar?</h2>
             <p style="font-size: 1.25rem; color: #64748b; margin-bottom: 2.5rem;">Únete a miles de personas que ya han confiado en IberPiso para su próxima gran decisión.</p>
             <div style="display: flex; gap: 1rem; justify-content: center;">
-                <a href="/TFG2DAW/src/backend/?action=register" class="btn-primary" style="padding: 1rem 2rem;">Crear Cuenta Gratis</a>
-                <a href="/TFG2DAW/src/backend/?action=contact" class="btn-secondary" style="padding: 1rem 2rem; background: white; border: 1px solid #e2e8f0; color: #0f172a;">Contactar Agente</a>
+                <a href="<?php echo BASE_URL; ?>/?action=register" class="btn-primary" style="padding: 1rem 2rem;">Crear Cuenta Gratis</a>
+                <a href="<?php echo BASE_URL; ?>/?action=contact" class="btn-secondary" style="padding: 1rem 2rem; background: white; border: 1px solid #e2e8f0; color: #0f172a;">Contactar Agente</a>
             </div>
         </div>
     </section>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Blog List View
  */
@@ -9,10 +9,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - IberPiso</title>
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/globals.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/nav-component.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/main-component.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/footer-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/globals.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/nav-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/main-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/footer-component.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .blog-container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
@@ -38,7 +38,7 @@
         
         <?php if (isAdmin()): ?>
             <div style="margin-top: 1rem;">
-                <a href="/TFG2DAW/src/backend/?action=blog_create" class="btn-primary">Nuevo Artículo</a>
+                <a href="<?php echo BASE_URL; ?>/?action=blog_create" class="btn-primary">Nuevo Artículo</a>
             </div>
         <?php endif; ?>
         
@@ -61,7 +61,7 @@
                             </div>
                             <h2 class="blog-title"><?php echo htmlspecialchars($post['titulo']); ?></h2>
                             <p class="blog-excerpt"><?php echo htmlspecialchars($post['extracto']); ?></p>
-                            <a href="/TFG2DAW/src/backend/?action=blog_detail&slug=<?php echo $post['slug']; ?>" class="read-more">
+                            <a href="<?php echo BASE_URL; ?>/?action=blog_detail&slug=<?php echo $post['slug']; ?>" class="read-more">
                                 Leer más →
                             </a>
                         </div>

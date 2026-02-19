@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Admin Dashboard View
  */
@@ -9,10 +9,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración - IberPiso</title>
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/globals.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/nav-component.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/main-component.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/footer-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/globals.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/nav-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/main-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/footer-component.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .dashboard-container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
@@ -44,7 +44,7 @@
             <div class="stat-card">
                 <div class="stat-number"><?php echo $stats['users']; ?></div>
                 <div class="stat-label">Usuarios Registrados</div>
-                <a href="/TFG2DAW/src/backend/?action=admin_users" style="font-size: 0.8em; color: #2563eb; text-decoration: none; margin-top: 0.5rem; display: inline-block;">Gestionar Usuarios →</a>
+                <a href="<?php echo BASE_URL; ?>/?action=admin_users" style="font-size: 0.8em; color: #2563eb; text-decoration: none; margin-top: 0.5rem; display: inline-block;">Gestionar Usuarios →</a>
             </div>
             <div class="stat-card">
                 <div class="stat-number"><?php echo $stats['posts']; ?></div>
@@ -56,7 +56,7 @@
         <div class="dashboard-section">
             <div class="section-header">
                 <h2>Propiedades Recientes</h2>
-                <a href="/TFG2DAW/src/backend/?action=property_create" class="btn-primary">Nueva Propiedad</a>
+                <a href="<?php echo BASE_URL; ?>/?action=property_create" class="btn-primary">Nueva Propiedad</a>
             </div>
             <div style="overflow-x: auto;">
                 <table class="data-table">
@@ -73,7 +73,7 @@
                         <?php foreach ($recentProperties as $prop): ?>
                             <tr>
                                 <td>
-                                    <a href="/TFG2DAW/src/backend/?action=property_detail&id=<?php echo $prop['id']; ?>" class="text-blue-600 hover:underline">
+                                    <a href="<?php echo BASE_URL; ?>/?action=property_detail&id=<?php echo $prop['id']; ?>" class="text-blue-600 hover:underline">
                                         <?php echo htmlspecialchars($prop['titulo']); ?>
                                     </a>
                                 </td>
@@ -85,7 +85,7 @@
                                     </span>
                                 </td>
                                 <td>
-                                    <a href="/TFG2DAW/src/backend/?action=property_edit&id=<?php echo $prop['id']; ?>" class="btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Editar</a>
+                                    <a href="<?php echo BASE_URL; ?>/?action=property_edit&id=<?php echo $prop['id']; ?>" class="btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Editar</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -98,7 +98,7 @@
         <div class="dashboard-section">
             <div class="section-header">
                 <h2>Blog</h2>
-                <a href="/TFG2DAW/src/backend/?action=blog_create" class="btn-primary">Nuevo Artículo</a>
+                <a href="<?php echo BASE_URL; ?>/?action=blog_create" class="btn-primary">Nuevo Artículo</a>
             </div>
             <div style="overflow-x: auto;">
                 <table class="data-table">
@@ -124,7 +124,7 @@
                                     </td>
                                     <td><?php echo date('d/m/Y', strtotime($post['created_at'])); ?></td>
                                     <td>
-                                        <a href="/TFG2DAW/src/backend/?action=blog_edit&id=<?php echo $post['id']; ?>" class="btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Editar</a>
+                                        <a href="<?php echo BASE_URL; ?>/?action=blog_edit&id=<?php echo $post['id']; ?>" class="btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Editar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

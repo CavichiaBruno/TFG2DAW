@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Edit Blog Post View
  */
@@ -9,10 +9,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Artículo - IberPiso</title>
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/globals.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/nav-component.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/main-component.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/footer-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/globals.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/nav-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/main-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/footer-component.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -21,7 +21,7 @@
     <main class="form-container">
         <h1>Editar Artículo</h1>
         
-        <form method="POST" action="/TFG2DAW/src/backend/?action=blog_update" enctype="multipart/form-data">
+        <form method="POST" action="<?php echo BASE_URL; ?>/?action=blog_update" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?php echo $post['id']; ?>">
             
             <div class="form-group">
@@ -60,7 +60,7 @@
             
             <div style="display: flex; gap: 1rem; align-items: center;">
                 <button type="submit" class="btn-primary">Actualizar</button>
-                <button type="submit" formaction="/TFG2DAW/src/backend/?action=blog_delete" class="btn-danger" 
+                <button type="submit" formaction="<?php echo BASE_URL; ?>/?action=blog_delete" class="btn-danger" 
                         onclick="return confirm('¿Eliminar artículo permanentemente?');">Eliminar</button>
             </div>
         </form>

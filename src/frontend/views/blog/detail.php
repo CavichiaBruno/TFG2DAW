@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Blog Detail View
  */
@@ -9,10 +9,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($post['titulo']); ?> - Blog IberPiso</title>
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/globals.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/nav-component.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/main-component.css">
-    <link rel="stylesheet" href="/TFG2DAW/src/frontend/components/Layout/footer-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/globals.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/nav-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/main-component.css">
+    <link rel="stylesheet" href="<?php echo ASSETS_URL; ?>/frontend/components/Layout/footer-component.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .blog-detail-container { max-width: 800px; margin: 3rem auto; padding: 0 1rem; }
@@ -31,7 +31,7 @@
     <?php include __DIR__ . '/../../components/Layout/nav-component.php'; ?>
     
     <main class="blog-detail-container">
-        <a href="/TFG2DAW/src/backend/?action=blog" class="back-link">← Volver al blog</a>
+        <a href="<?php echo BASE_URL; ?>/?action=blog" class="back-link">← Volver al blog</a>
         
         <header class="article-header">
             <h1 class="article-title"><?php echo htmlspecialchars($post['titulo']); ?></h1>
@@ -51,7 +51,7 @@
         
         <?php if (isAdmin()): ?>
             <div style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;">
-                <a href="/TFG2DAW/src/backend/?action=blog_edit&id=<?php echo $post['id']; ?>" class="btn-secondary">Editar Artículo</a>
+                <a href="<?php echo BASE_URL; ?>/?action=blog_edit&id=<?php echo $post['id']; ?>" class="btn-secondary">Editar Artículo</a>
             </div>
         <?php endif; ?>
     </main>
